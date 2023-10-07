@@ -1,5 +1,26 @@
 `use strict`;
 
+const inputArea = document.querySelector(`.userInput`);
+const resultText = document.querySelector(`.resultText`);
+const btnUpperCase = document.querySelector(`.UpperCase`);
+
+/* let userInputText = ``;
+let transformeduserInputText = ``; */
+
+const getUserInput = function () {
+  return inputArea.value;
+};
+
+const upperCase = function () {
+  const userInput = getUserInput();
+  return userInput.toUpperCase();
+};
+
+btnUpperCase.addEventListener(`click`, function () {
+  const userInputUpper = upperCase();
+  console.log(userInputUpper);
+  resultText.textContent = userInputUpper;
+});
 /* Write a program that receives a list of variable names written in underscore_case
 and convert them to camelCase.
 The input will come from a textarea inserted into the DOM (see code below to
